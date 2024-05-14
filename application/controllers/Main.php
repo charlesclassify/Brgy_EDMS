@@ -28,4 +28,10 @@ class Main extends CI_Controller
         $this->load->view('main/test');
         $this->load->view('main/footer');
     }
+    public function user()
+    {
+        $this->load->view('main/header');
+        $this->load->view('main/user');
+        $this->load->view('main/footer');
+    }
 }
