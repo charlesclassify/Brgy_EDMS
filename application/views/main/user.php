@@ -1,1 +1,1 @@
-<h1 class="col-mt-4">User</h1>
+<h1 class="mt-4">User</h1>
