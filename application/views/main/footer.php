@@ -14,13 +14,27 @@
    </footer>
    </div>
    </div>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+   <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
    <script src="<?= base_url('assets/js/scripts.js'); ?>"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-   <script src="<?= base_url('assets/assets/demo/chart-area-demo.js'); ?>"></script>
-   <script src="<?= base_url('assets/assets/demo/chart-bar-demo.js'); ?>"></script>
-   <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-   <script src="https://kit.fontawesome.com/042a6b7d31.js" crossorigin="anonymous"></script>
+   <script>
+       $(document).ready(function() {
+           $('#user-datatables').dataTable({
+               "lengthMenu": [10, 25, 50, 75, 100]
+           });
+
+           $('#criminal_case-datatables').dataTable({
+               "lengthMenu": [10, 25, 50, 75, 100]
+           });
+           $('#civil_case-datatables').dataTable({
+               "lengthMenu": [10, 25, 50, 75, 100]
+           });
+       });
+   </script>
    </body>
+
 
    </html>
