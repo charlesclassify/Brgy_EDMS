@@ -40,7 +40,71 @@ class User_model extends CI_Model
         $this->db->where('isDelete', 'no');
         $query = $this->db->get('user');
         $row = $query->result();
-
         return $row;
+    }
+
+    function get_user($user_id)
+    {
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('user');
+        $row = $query->row();
+        return $row;
+    }
+    function edit_user()
+    {
+        $user_id = (int) $this->input->post('user_id');
+        $username = (string) $this->input->post('username');
+        $first_name = (string) $this->input->post('first_name');
+        $last_name = (string) $this->input->post('last_name');
+        $password = (string) $this->input->post('password');
+        $barangay = (string) $this->input->post('barangay');
+        $role = (string) $this->input->post('role');
+
+        $data = array(
+            'firstname' => $first_name,
+            'lastname' => $last_name,
+            'username' => $username,
+            'password' => sha1($password),
+            'barangay' => $barangay,
+            'role' => $role,
+        );
+
+        $this->db->where('user_id', $user_id);
+
+        $response = $this->db->update('user', $data);
+
+        if ($response) {
+            return $user_id;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function deactivate_user($user_id)
+    {
+        $data = array(
+            'status' => 'deactivated',
+        );
+        $this->db->where('user_id', $user_id);
+        $response = $this->db->update('user', $data);
+        if ($response) {
+            return $user_id;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function reactivate_user($user_id)
+    {
+        $data = array(
+            'status' => 'active',
+        );
+        $this->db->where('user_id', $user_id);
+        $response = $this->db->update('user', $data);
+        if ($response) {
+            return $user_id;
+        } else {
+            return FALSE;
+        }
     }
 }

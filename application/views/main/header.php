@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <title>BRGY KPEDMS</title>
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>/assets/images/kp_brand.png" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <link rel="shortcut icon" href="<?php echo base_url("assets/img/kp_brand.png"); ?>" />
+    <link rel=" stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
     <link href="<?= base_url('assets/css/styles1.css'); ?>" rel="stylesheet" />
 
 </head>
