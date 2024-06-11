@@ -1,38 +1,24 @@
  <h1 class="mt-4">Dashboard</h1>
  <div class="row">
-     <div class="col-xl-3 col-md-6">
-         <div class="card bg-primary text-white mb-4">
-             <div class="card-body">Primary Card</div>
-             <div class="card-footer d-flex align-items-center justify-content-between">
-                 <a class="small text-white stretched-link" href="#">View Details</a>
-                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+     <div class="col-md-4">
+         <div class="card p-4 h-100">
+             <div class="card-header">
+                 Total Criminal Case
+             </div>
+             <div class="card-body">
+                 <h5>Total Criminal Cases</h5>
+                 <p><?= $criminal ?></p>
              </div>
          </div>
      </div>
-     <div class="col-xl-3 col-md-6">
-         <div class="card bg-warning text-white mb-4">
-             <div class="card-body">Warning Card</div>
-             <div class="card-footer d-flex align-items-center justify-content-between">
-                 <a class="small text-white stretched-link" href="#">View Details</a>
-                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+     <div class="col-md-4">
+         <div class="card p-4 h-100">
+             <div class="card-header">
+                 Total Civil Case
              </div>
-         </div>
-     </div>
-     <div class="col-xl-3 col-md-6">
-         <div class="card bg-success text-white mb-4">
-             <div class="card-body">Success Card</div>
-             <div class="card-footer d-flex align-items-center justify-content-between">
-                 <a class="small text-white stretched-link" href="#">View Details</a>
-                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-             </div>
-         </div>
-     </div>
-     <div class="col-xl-3 col-md-6">
-         <div class="card bg-danger text-white mb-4">
-             <div class="card-body">Danger Card</div>
-             <div class="card-footer d-flex align-items-center justify-content-between">
-                 <a class="small text-white stretched-link" href="#">View Details</a>
-                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+             <div class="card-body">
+                 <h5>Total Civil Cases</h5>
+                 <p><?= $civil ?></p>
              </div>
          </div>
      </div>

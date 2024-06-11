@@ -32,6 +32,9 @@
            $('#civil_case-datatables').dataTable({
                "lengthMenu": [10, 25, 50, 75, 100]
            });
+           $('#barangay-datatables').dataTable({
+               "lengthMenu": [10, 25, 50, 75, 100]
+           });
        });
    </script>
    </body>

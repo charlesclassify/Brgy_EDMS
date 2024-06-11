@@ -54,4 +54,46 @@ class Criminal_case_model extends CI_Model
             return false;
         }
     }
+
+    function update_criminal_case_path($criminal_case_id, $form7, $hearing, $summon, $pangkat, $settlement)
+    {
+        $data = array();
+
+        if (!empty($form7)) {
+            $data['form_7_path'] = $form7;
+        }
+        if (!empty($hearing)) {
+            $data['notice_of_hearing_path'] = $hearing;
+        }
+        if (!empty($summon)) {
+            $data['summon_path'] = $summon;
+        }
+        if (!empty($pangkat)) {
+            $data['pangkat_path'] = $pangkat;
+        }
+        if (!empty($settlement)) {
+            $data['settlement_path'] = $settlement;
+        }
+
+        if (!empty($data)) {
+            $this->db->where('criminal_case_id', $criminal_case_id);
+            $response = $this->db->update('criminal_case', $data);
+
+            if ($response) {
+                return $criminal_case_id;
+            } else {
+                return FALSE;
+            }
+        } else {
+            // No file paths to update
+            return $criminal_case_id;
+        }
+    }
+
+    public function get_total_criminal_count()
+    {
+        // Assuming your table is named 'product'
+        $this->db->from('criminal_case');
+        return $this->db->count_all_results();
+    }
 }

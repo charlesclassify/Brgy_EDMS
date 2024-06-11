@@ -9,11 +9,11 @@
     }
 
     .modal-dialog {
-        max-width: 500px;
+        max-width: 750px;
     }
 
     label {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -26,29 +26,35 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="form-group col-12 d-inline-block">
-                    <label for="civil_case_no" class="bold-label">Civil Case No:</strong></label>
-                    <input type="text" id="civil_case_no" name="civil_case_no" class="form-control" required>
+                <div class="row">
+                    <div class="form-group col-md-6 d-inline-block">
+                        <label for="civil_case_no" class="bold-label">Civil Case No:</strong></label>
+                        <input type="text" id="civil_case_no" name="civil_case_no" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6  d-inline-block">
+                        <label for="date_filed" class="bold-label">Date Filed:</strong></label>
+                        <input type="date" id="date_filed" name="date_filed" class="form-control" required>
+                    </div>
                 </div>
-                <div class="form-group col-12 d-inline-block">
-                    <label for="date_filed" class="bold-label">Date Filed:</strong></label>
-                    <input type="date" id="date_filed" name="date_filed" class="form-control" required>
+                <div class="row">
+                    <div class="form-group col-md-6  d-inline-block">
+                        <label for="civil_case_name" class="bold-label">Civil Case Name:</strong></label>
+                        <input type="text" id="civil_case_name" name="civil_case_name" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6  d-inline-block">
+                        <label for="purok" class="bold-label">Purok:</strong></label>
+                        <input type="text" id="purok" name="purok" class="form-control" required>
+                    </div>
                 </div>
-                <div class="form-group col-12 d-inline-block">
-                    <label for="civil_case_name" class="bold-label">Civil Case Name:</strong></label>
-                    <input type="text" id="civil_case_name" name="civil_case_name" class="form-control" required>
-                </div>
-                <div class="form-group col-12 d-inline-block">
-                    <label for="complainant" class="bold-label">Complainant/s:</strong></label>
-                    <input type="text" id="complainant" name="complainant" class="form-control" required>
-                </div>
-                <div class="form-group col-12 d-inline-block">
-                    <label for="respondent" class="bold-label">Respondent/s:</strong></label>
-                    <input type="text" id="respondent" name="respondent" class="form-control" required>
-                </div>
-                <div class="form-group col-12 d-inline-block">
-                    <label for="purok" class="bold-label">Purok:</strong></label>
-                    <input type="text" id="purok" name="purok" class="form-control" required>
+                <div class="row">
+                    <div class="form-group col-md-6 d-inline-block">
+                        <label for="respondent" class="bold-label">Respondent/s:</strong></label>
+                        <input type="text" id="respondent" name="respondent" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6 d-inline-block">
+                        <label for="complainant" class="bold-label">Complainant/s:</strong></label>
+                        <input type="text" id="complainant" name="complainant" class="form-control" required>
+                    </div>
                 </div>
                 <div class="form-group col-12 d-inline-block">
                     <label for="complaint" class="bold-label">Complaint:</strong></label>
@@ -57,6 +63,10 @@
                 <div class="form-group col-12 d-inline-block">
                     <label for="relief" class="bold-label">Relief/s:</strong></label>
                     <input type="text" id="relief" name="relief" class="form-control" required>
+                </div>
+                <div class="form-group col-12 d-inline-block">
+                    <label for="file_upload" class="bold-label">Upload File:</label>
+                    <input type="file" id="file_upload" name="file_upload" class="form-control" required>
                 </div>
             </div>
             <div class="modal-footer">

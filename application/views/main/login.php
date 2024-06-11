@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Login - SB Admin</title>
-    <link href="<?= base_url('assets/css/styles.css'); ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/styles1.css'); ?>" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,38 +17,35 @@
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Login</h3>
-                                </div>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                            <label for="inputEmail">Email address</label>
+                    <form method="post" autocomplete="on" action="<?= base_url('main/login_submit') ?>">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header">
+                                        <div class="mb-4">
+                                            <h3> <img src="<?php echo base_url('assets/img/kp_brand.png'); ?>" alt="Katarungang Pambarangay" class="logo" style="height:50px"></h3>
+                                            <h3 class="text-center font-weight-light my-4">Login</h3>
                                         </div>
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
-                                            <label for="inputPassword">Password</label>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                            <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">Forgot Password?</a>
-                                            <a class="btn btn-primary" href="<?= base_url('main/dashboard') ?>">Login</a>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="username" name="username" />
+                                                <label for="inputEmail">Username</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control" id="password" name="password" />
+                                                <label for="inputPassword">Password</label>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                <a class="btn btn-primary" href="<?= base_url('main/dashboard') ?>">Login</a>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </main>
         </div>
