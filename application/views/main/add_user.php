@@ -22,7 +22,14 @@
             </div>
             <div class="form-group">
                 <label for="barangay" class="bold-label">Barangay</label>
-                <input type="text" id="barangay" name="barangay" placeholder="Choose Barangay" class="form-control <?php echo form_error('barangay') ? 'is-invalid' : ''; ?>" value="<?php echo set_value('barangay'); ?>">
+                <select class="form-control" title="Select Barangay" name="barangay" id="barangay" required>
+                    <option value="" selected hidden>Select Barangay</option>
+                    <?php foreach ($barangay as $bar) { ?>
+                        <option value="<?= $bar->barangay ?>, <?= $bar->city_municipality ?>, <?= $bar->province ?>">
+                            Brgy. <?= $bar->barangay ?>, <?= $bar->city_municipality ?>, <?= $bar->province ?>
+                        </option>
+                    <?php } ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="role" class="bold-label">Role</label><br>

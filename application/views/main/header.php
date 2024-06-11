@@ -51,6 +51,10 @@
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-chart-simple"></i></div>
                             Dashboard
                         </a>
+                        <a id="nav-link" class="nav-link" href="<?= base_url('main/barangay') ?>">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-landmark-flag"></i></div>
+                            Barangay
+                        </a>
                         <a id="nav-link" class="nav-link" href="<?= base_url('main/user') ?>">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                             User Management

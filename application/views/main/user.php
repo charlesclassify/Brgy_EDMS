@@ -29,7 +29,7 @@
                             <td><?php echo $count++; ?></td>
                             <td><?php echo $user->username ?></td>
                             <td><?php echo $user->firstname ?> <?php echo $user->lastname ?></td>
-                            <td><?php echo $user->barangay ?></td>
+                            <td>Brgy. <?php echo $user->barangay ?></td>
                             <td><?php echo $user->role ?></td>
                             <td class="text-center">
                                 <?php if ($user->status == "active") { ?>

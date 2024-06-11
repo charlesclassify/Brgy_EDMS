@@ -24,7 +24,7 @@
                         <th>Criminal Case No.</th>
                         <th>Case Name</th>
                         <th>Attachments</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,8 +47,9 @@
                                 <?php } ?> -->
                             </td>
                             <td>
-                                <a href="#" style="color:darkcyan; padding-left:6px;" title="Click here to view case"><i class="fas fa-eye"></i></a>
-                                <a href="#" style="color:gold; padding-left:6px;" title="Click here to view case"><i class="fa-solid fa-print"></i></a>
+                                <a href="#" data-bs-toggle="modal" class="viewCriminalCaseBtn" data-caseId="<?php echo $criminal_case_id; ?>" style="color:darkcyan; padding-left:6px;" title="Click here to view case"><i class="fas fa-eye"></i></a>
+                                <a href="#" data-bs-toggle="modal" class="editCriminalCaseBtn" data-caseId="<?php echo $criminal_case_id; ?>" style="color:gold; padding-left:6px;" title="Click here to edit case"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="#" style="color:green; padding-left:6px;" title="Click here to view case"><i class="fa-solid fa-print"></i></a>
                                 <a href="#" style="color:red; padding-left:6px;" title="Click here to delete case"><i class="fas fa-trash"></i></a>
 
                             </td>
@@ -60,6 +61,8 @@
     </div>
     <div id="modalContainer"></div>
     <div id="attachmentsContainer"></div>
+    <div id="viewCriminalCaseContainer"></div>
+    <div id="editCriminalCaseContainer"></div>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -81,6 +84,28 @@
         receiveButtons.forEach(function(button) {
             button.addEventListener('click', handleAddAttachmentsBtn);
         });
+
+        function handleViewCriminalCaseBtn(event) {
+            event.preventDefault();
+            var caseId = this.getAttribute('data-caseId');
+            loadModalContent2('<?php echo base_url('main/view_criminal_case_modal/'); ?>/' + caseId);
+        }
+
+        var viewButtons = document.querySelectorAll('.viewCriminalCaseBtn');
+        viewButtons.forEach(function(button) {
+            button.addEventListener('click', handleViewCriminalCaseBtn);
+        });
+
+        function handleEditCriminalCaseBtn(event) {
+            event.preventDefault();
+            var caseId = this.getAttribute('data-caseId');
+            loadModalContent3('<?php echo base_url('main/edit_criminal_case_modal/'); ?>/' + caseId);
+        }
+
+        var editButtons = document.querySelectorAll('.editCriminalCaseBtn');
+        editButtons.forEach(function(button) {
+            button.addEventListener('click', handleEditCriminalCaseBtn);
+        });
     });
 
     function loadModalContent(url) {
@@ -101,6 +126,30 @@
             .then(data => {
                 document.getElementById('attachmentsContainer').innerHTML = data;
                 $('#add_criminal_attachments_modal').modal('show');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    function loadModalContent2(url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('viewCriminalCaseContainer').innerHTML = data;
+                $('#view_criminal_case_modal').modal('show');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    function loadModalContent3(url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('editCriminalCaseContainer').innerHTML = data;
+                $('#edit_criminal_case_modal').modal('show');
             })
             .catch(error => {
                 console.error('Error:', error);

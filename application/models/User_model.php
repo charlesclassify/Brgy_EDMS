@@ -107,4 +107,19 @@ class User_model extends CI_Model
             return FALSE;
         }
     }
+
+    function checkPassword($password, $username)
+    {
+        // Hash the input password using SHA1
+        $hashed_password = sha1($password);
+
+        // Retrieve user from database by username and hashed password
+        $query = $this->db->query("SELECT * FROM user WHERE username = ? AND password = ?", array($username, $hashed_password));
+
+        if ($query->num_rows() == 1) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
 }

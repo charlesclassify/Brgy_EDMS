@@ -39,14 +39,14 @@
     }
 </style>
 
-<div class="modal fade" id="add_criminal_attachments_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="add_civil_attachments_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <?= form_open_multipart('main/submit_add_criminal_attachments', array('onsubmit' => 'return confirm(\'Are you sure you want to add these attachments?\')')); ?>
+            <?= form_open_multipart('main/submit_add_civil_attachments', array('onsubmit' => 'return confirm(\'Are you sure you want to add these attachments?\')')); ?>
             <div class="modal-header" style="background-color:#201658; color:white;">
-                <h5 class="modal-title" id="staticBackdropLabel">Add Attachments for Case No: <strong><?= $criminal_case->criminal_case_no ?></strong></h5>
-                <input type="hidden" name="criminal_case_id" id="criminal_case_id" value="<?= $criminal_case->criminal_case_id ?>">
-                <input type="hidden" name="date_filed" id="date_filed" value="<?= $criminal_case->date_filed ?>">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Attachments for Case No: <strong><?= $civil_case->civil_case_no ?></strong></h5>
+                <input type="hidden" name="civil_case_id" id="civil_case_id" value="<?= $civil_case->civil_case_id ?>">
+                <input type="hidden" name="date_filed" id="date_filed" value="<?= $civil_case->date_filed ?>">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -61,7 +61,7 @@
 
                 foreach ($file_fields as $field_key => $label) {
                     $file_path_var = $field_key . '_path';
-                    $file_path = $criminal_case->$file_path_var;
+                    $file_path = $civil_case->$file_path_var;
                     echo '<div class="row printable">
                             <label class="bold-label">' . $label . ':</label>';
                     if (!empty($file_path)) {
